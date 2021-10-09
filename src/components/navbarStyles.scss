@@ -1,0 +1,74 @@
+@import '../variableGeneral.scss';
+
+.navbar{
+    position: fixed;
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    left: 0;
+    .justified{
+        width: 80%;
+        display: flex;
+        justify-content: flex-end;
+        .containerButtonNavbar{
+            display: flex;
+            background-color: $stroke;
+            border-radius: 1rem;
+            position: relative;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            .btnNavbar{
+                border: none;
+                color: #fff;
+                padding: 0.5rem;
+                background-color: $purple;
+                width: 140px;
+                text-align: center;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+            :first-child{
+                margin-right: 1px;
+            }
+            .left{
+                border-radius: 0rem 0rem 0rem 1rem;
+            }
+            .right{
+                border-radius: 0rem 0rem 1rem 0rem;
+            }
+            .fav{
+                width: 15px;
+            }
+        }
+    }
+    
+}
+@include small {    
+    .navbar{
+        position: fixed;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        justify-content: center;
+        .justified{
+            width: 100%;
+            justify-content: center;
+            .containerButtonNavbar{
+                .btnNavbar{
+                    height: 40px;
+                }
+                .left{
+                    border-radius: 1rem 0rem 0rem 0rem;
+                }
+                .right{
+                    border-radius: 0rem 1rem 0rem 0rem;
+                }
+            }
+        }
+
+    }
+ }

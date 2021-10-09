@@ -1,0 +1,125 @@
+@import '../variableGeneral.scss';
+
+.modal{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    .closeModal{
+        cursor: pointer;
+    }
+    .containerModal{
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        width: 500px;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .headerModal{
+        display: flex;
+        justify-content: space-between ;
+        span{
+            font-weight: bold;
+        }
+    }
+    .footer{
+       display: flex;
+       justify-content: center;
+       .buttonGuardar{
+            width: 50%;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            border-radius: 0.5rem;
+            border: 4px solid $purple;
+            background-color: rgba(0, 0, 0, 0.6);;
+       }
+    }
+    .inputsModal{
+        display: flex; 
+        justify-content: space-between;
+        .containerInputCheck{
+            flex-grow: 0.4;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            .inputCheck{
+                display: flex;
+                justify-content: space-between;
+                div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    .containerInput{
+        flex-grow: 0.3;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        label{
+            font-size: 14px;
+            color: #263238;
+        }
+        input{
+            background-color: rgba($color: #263238, $alpha: 0.06);
+            height: 50px;
+            border: none;
+            border-bottom: 1px solid #263238;
+            border-radius: 0.2rem 0.2rem 0rem 0rem;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+    }
+    
+    .labelinputFile{
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: rgba($color: #263238, $alpha: 0.06);
+    }
+}
+
+@include small {    
+    .modal{
+        top: 0;
+        position: fixed;
+        .containerModal{
+            width: 250px;
+            .inputsModal{
+                flex-direction: column;
+                .containerInput{
+                    gap: 1rem;
+                    input{
+                        background-color: rgba($color: #263238, $alpha: 0.06);
+                        height: 20px;
+                        border: none;
+                        border-bottom: 1px solid #263238;
+                        border-radius: 0.2rem 0.2rem 0rem 0rem;
+                        font-size: 1rem;
+                        padding: 0.5rem;
+                    }
+                }
+            };
+        }
+        .labelinputFile{
+            width: auto;
+        }
+    }
+    
+}

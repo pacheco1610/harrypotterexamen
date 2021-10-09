@@ -1,0 +1,154 @@
+@import '../variableGeneral.scss';
+
+.containerCards{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 6rem;
+    .card{
+        background-color: #fff ;
+        width: 500px;
+        border-radius: 1rem;
+        display: flex;
+        .imagenCard{
+            flex-grow: 4;
+            border-radius: 1rem 0rem 0rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .circleImagenCard{
+                width: 150px;
+                height: 150px;
+                background-color:white ;
+                border-radius: 10rem;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+        }
+        .infoCard{
+            flex-grow: 10;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            .containerInfoCard{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                height: 100%;
+                width: 100%;
+                .headerCard{
+                    color: #9999;
+                    font-size: 14px;
+                    display: flex;
+                    justify-content: space-between;
+                    .fav{ 
+                        svg{
+                            width: 20px;
+                            cursor: pointer;
+                        }
+                    }
+                    .activeFav{
+                        fill: #333333;
+                        stroke: #333333;
+                    }
+                }
+                .nameCard{
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: #081F32;
+                }
+                .bodyCard{
+                    font-size: 14px;
+                    text-transform: capitalize;
+                    span{
+                        font-weight: bold;
+                        color: #374A59;
+                    }
+                }
+            }
+            
+        }
+    }
+    margin-bottom: 10rem;
+}
+@include small{   
+    .coverApp{
+        display: none;
+    } 
+    .containerCards{
+        margin-top: 3rem;
+        gap: 1rem;
+        .card{
+            flex-direction: column;
+            width: 140px;
+            .Gryffindor{
+                background: linear-gradient(90deg, #FF0000 0%, #FED482 100%);
+            }
+            .Slytherin{
+                background: linear-gradient(90deg, #1C792B 0%, #82E95E 100%);
+            }
+            .Hufflepuff{
+                background: linear-gradient(90deg, #FFC700 0%, #FFF388 100%);
+            }
+            .Ravenclaw{
+                background: linear-gradient(90deg, #0597B7 0%, #66D1FF 100%);
+            }
+            .NotHouse{
+                background: linear-gradient(90deg, #ebebeb 0%, #f3f3f3 100%);
+            }
+            .imagenCard{
+                border-radius: 1rem 1rem 0rem 0rem;
+                padding: 0.5rem;
+                .circleImagenCard{
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+            .infoCard{
+                .containerInfoCard{
+                    flex-direction: column-reverse;
+                    flex-grow: 5;
+                    .nameCard{
+                        text-align: center;
+                        font-size: 18px;
+                    }
+                    .headerCard{
+                        font-size: 11px;
+                    }
+                    .bodyCard{
+                        display: none;
+                    }
+                }
+               
+            }
+
+        }
+    }
+   
+}
+@include medium{
+    .containerCards{
+        gap: 1rem;
+        .card{
+            width: 400px;
+            height: auto;
+        }
+    }
+}
+.Gryffindor{
+    background: linear-gradient(135deg, #FF0000 0%, #FED482 100%);
+}
+.Slytherin{
+    background: linear-gradient(135deg, #1C792B 0%, #82E95E 100%);
+}
+.Hufflepuff{
+    background: linear-gradient(135deg, #FFC700 0%, #FFF388 100%);
+}
+.Ravenclaw{
+    background: linear-gradient(135deg, #0597B7 0%, #66D1FF 100%);
+}
+.NotHouse{
+    background: linear-gradient(135deg, #ebebeb 0%, #f3f3f3 100%);
+}

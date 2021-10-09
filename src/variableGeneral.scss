@@ -1,0 +1,52 @@
+/*COLORES GENERALES*/
+$purple: #6B63B5;
+$stroke:#403B6D;
+@mixin small {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  
+  @mixin medium {
+    @media (min-width:600px) and (max-width: 1024px) {
+      @content;
+    }
+  }
+  
+  @mixin large {
+    @media only screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+  .btnGeneral{
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    width: 280px;
+    height: 67px;
+    color: #fff;
+    background: rgba($color: #000000, $alpha: 0.6);
+    border: solid 4px $purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+    }
+    &:hover{
+        span{
+            background: rgba($color: $purple, $alpha: 0.5);;
+        }
+    }
+}
+@include small {
+  .btnGeneral{
+    font-size: 13px;
+  }
+}

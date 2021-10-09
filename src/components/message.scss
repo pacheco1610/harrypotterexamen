@@ -1,0 +1,16 @@
+.Mensaje{
+    color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+        width: 80%;
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+    }
+}
