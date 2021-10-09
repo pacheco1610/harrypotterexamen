@@ -39,5 +39,4 @@ const Index = ({characters, allcharacters}) =>{
     )
 }
 
-export default connect (
-    apStateToProps,{allcharacters})(Index)
+export default connect (mapStateToProps,{allcharacters})(Index)
