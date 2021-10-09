@@ -1,7 +1,6 @@
 import React from 'react'
 import './heroStyles.scss'
 import logo from '../assets/HarryPotter.svg';
-import card from './card';
 export default function Hero() {
     const filtrado = (e, filtro) => {
         const cards = document.getElementsByClassName('card')
