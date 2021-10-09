@@ -1,6 +1,6 @@
 @import '../variableGeneral.scss';
 
-.containerCards{
+.containerCards{    
     display: flex;
     flex-wrap: wrap;
     height: auto;
@@ -49,7 +49,7 @@
                             cursor: pointer;
                         }
                     }
-                    .activeFav{
+                    .true{
                         fill: #333333;
                         stroke: #333333;
                     }
@@ -72,6 +72,9 @@
         }
     }
     margin-bottom: 10rem;
+}
+.hide{
+    display: none !important;
 }
 @include small{   
     .coverApp{

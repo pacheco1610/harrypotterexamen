@@ -1,17 +1,23 @@
 import React,{useState} from 'react'
 import './modal.scss'
 import Close from './close'
+import Loader from './loader'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {addcharacter} from '../store/action'
+const { v4: uuidv4 } = require('uuid');
+
+
 const  Modal =({setActiveModal,addcharacter}) =>{
     const [imagen, setImagen] = useState(null)
-
+    const [loading,setLoading]= useState(null)
+    const [mesagge, setmesagge] = useState(null)
     const handleImage = (e) =>{
         setImagen(e.target.files[0])
     }
     const handleSubmit = async (e) =>{
         e.preventDefault()
+        setLoading(true)
         const perfile = new Object();
         const newCharacter = new FormData(e.target)
         if (newCharacter.get('posicion')==='studen') {
@@ -21,20 +27,30 @@ const  Modal =({setActiveModal,addcharacter}) =>{
             perfile.hogwartsStudent = false
             perfile.hogwartsStaff = true
         }
-        const response = await axios.post('http://localhost:5000/characters',{
+        await axios.post('http://localhost:5000/characters',{
+            id:uuidv4(),
             name:newCharacter.get('name'),
             dateOfBirth:newCharacter.get('dateOfBirth'),
             eyeColour:newCharacter.get('eyeColour'),
             hairColour: newCharacter.get('hairColour'),
             gender: newCharacter.get('gender'),
             ...perfile
-
         })
-        addcharacter(response.data)
+        .then(function(response){
+            addcharacter(response.data)
+            setLoading(false)
+            setActiveModal(false)
+        }).catch(function(err){
+            setLoading(false)
+            setmesagge(true)
+        })
+       
     }
     return (
         <form className="modal" onSubmit={(e)=>handleSubmit(e)}>
             <div className="containerModal">
+                {loading&&<div className="loading"><Loader/></div>}
+                {mesagge&&<div className="message"><span>¡OPS! PERDIMOS LA CONEXIÓN</span></div>}
                 <div className="headerModal">
                     <div className="title"><span>Agregar un personaje</span></div>
                     <div className="closeModal"  onClick={()=>setActiveModal(false)}><Close /></div>
